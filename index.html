@@ -83,7 +83,86 @@
     }
     @media(max-width:430px){.actions{grid-template-columns:1fr}}
     @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+
+    /* -------- PRIVACIDADE / ANALYTICS -------- */
+    .privacy-settings{
+      margin-top:8px;
+      border:0;
+      background:transparent;
+      color:var(--primary2);
+      font:inherit;
+      font-size:.76rem;
+      font-weight:700;
+      text-decoration:underline;
+      text-underline-offset:2px;
+      cursor:pointer;
+    }
+    .analytics-consent{
+      position:fixed;
+      left:50%;
+      bottom:max(14px,env(safe-area-inset-bottom));
+      z-index:2000;
+      width:min(620px,calc(100vw - 24px));
+      padding:16px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      background:rgba(255,255,255,.98);
+      color:var(--text);
+      box-shadow:0 18px 48px rgba(15,23,42,.22);
+      backdrop-filter:blur(10px);
+    }
+    .analytics-consent[hidden]{display:none!important}
+    .analytics-consent strong{
+      display:block;
+      margin-bottom:6px;
+      color:var(--primary);
+      font-size:.92rem;
+    }
+    .analytics-consent p{
+      margin:0;
+      color:var(--muted);
+      font-size:.78rem;
+      line-height:1.45;
+    }
+    .analytics-consent-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:12px;
+    }
+    .analytics-consent-actions button{
+      min-height:42px;
+      border-radius:11px;
+      font:inherit;
+      font-size:.8rem;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .analytics-accept{
+      border:1px solid var(--primary);
+      background:var(--primary);
+      color:#fff;
+    }
+    .analytics-decline{
+      border:1px solid var(--border);
+      background:var(--soft);
+      color:var(--primary);
+    }
+    @media(max-width:430px){
+      .analytics-consent-actions{grid-template-columns:1fr}
+    }
+
   </style>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ywmbi1gohv");
+</script>
+
 </head>
 <body>
   <main class="page">
@@ -170,7 +249,7 @@
 
       <article class="app-card">
         <div class="app-icon" aria-hidden="true">C</div>
-        <div class="app-info"><h2>Conversor Laboratorial</h2><p>Conversões de unidades Laboratoriais</p></div>
+        <div class="app-info"><h2>Conversor Laboratorial</h2><p>Conversões Laboratoriais</p></div>
         <div class="platforms">
           <div class="platform-group">
             <div class="platform-label">Android</div>
@@ -263,7 +342,7 @@
 
       <article class="app-card">
         <div class="app-icon" aria-hidden="true">P</div>
-        <div class="app-info"><h2>Paraped</h2><p>Cálculo de doses na parada cardiorrespiratória pediátrica</p></div>
+        <div class="app-info"><h2>Paraped</h2><p>Disponível para Android e iPhone / iOS</p></div>
         <div class="platforms">
           <div class="platform-group">
             <div class="platform-label">Android</div>
@@ -320,8 +399,133 @@
 
     <footer>
       <strong>Desenvolvido por Adão L. L. Couto</strong><br>
-      Aplicativos para Android e iPhone / iOS
+      Aplicativos para Android e iPhone / iOS<br>
+      <button type="button" class="privacy-settings" id="analyticsPreferences">Preferências de privacidade</button>
     </footer>
   </main>
+    <p>
+      Posso registrar visitas, origem do acesso e quais botões de aplicativos são clicados.
+      Não solicito e-mail, login de redes sociais, localização GPS nem dados clínicos para essa finalidade.
+    </p>
+      <button type="button" class="analytics-decline" id="analyticsDecline">Continuar sem estatísticas</button>
+    </div>
+  </aside>
+
+  
+<script>
+(function () {
+  "use strict";
+
+  // Insira seu ID do Google Analytics 4 abaixo.
+  var GA_MEASUREMENT_ID = "G-ZZVBEDQHBP";
+
+  // Carregamento automático, sem banner.
+  // Mantém armazenamento de publicidade e analytics negado para evitar cookies do GA.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    analytics_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied"
+  });
+
+  function analyticsConfigured() {
+    return /^G-[A-Z0-9]+$/i.test(GA_MEASUREMENT_ID) &&
+           GA_MEASUREMENT_ID !== "G-ZZVBEDQHBP";
+  }
+
+  function getPlatform() {
+    var ua = navigator.userAgent || "";
+    if (/Android/i.test(ua)) return "Android";
+    if (/iPhone|iPad|iPod/i.test(ua)) return "iOS";
+    if (/Windows/i.test(ua)) return "Windows";
+    if (/Macintosh|Mac OS X/i.test(ua)) return "macOS";
+    if (/Linux/i.test(ua)) return "Linux";
+    return "Outro";
+  }
+
+  function getCampaignData() {
+    var p = new URLSearchParams(location.search);
+    return {
+      source: p.get("utm_source") || document.referrer || "direto",
+      medium: p.get("utm_medium") || "",
+      campaign: p.get("utm_campaign") || ""
+    };
+  }
+
+  function loadAnalytics() {
+    if (!analyticsConfigured()) return;
+
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
+    document.head.appendChild(s);
+
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID, {
+      send_page_view: false,
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+
+    var campaign = getCampaignData();
+
+    gtag("event", "page_view", {
+      page_title: document.title,
+      page_location: location.href,
+      page_referrer: document.referrer || "",
+      source_name: campaign.source,
+      medium_name: campaign.medium,
+      campaign_name: campaign.campaign,
+      platform_name: getPlatform()
+    });
+  }
+
+  function classifyLink(a) {
+    var href = a.href || "";
+    var label = (a.textContent || "").trim();
+
+    var destination = "Outro";
+    if (/play\.google\.com\/store\/apps\/details/i.test(href)) destination = "Google Play";
+    else if (/play\.google\.com\/apps\/testing/i.test(href)) destination = "Teste Google Play";
+    else if (/adaocouto\.github\.io/i.test(href)) destination = "iPhone / iOS";
+
+    var card = a.closest(".app-card");
+    var app = "";
+    if (card) {
+      var h2 = card.querySelector("h2");
+      if (h2) app = h2.textContent.trim();
+    }
+
+    return { app: app, destination: destination, label: label };
+  }
+
+  document.addEventListener("click", function (event) {
+    var a = event.target.closest("a[href]");
+    if (!a || !analyticsConfigured()) return;
+
+    var info = classifyLink(a);
+    var campaign = getCampaignData();
+
+    gtag("event", "app_link_click", {
+      app_name: info.app,
+      destination_type: info.destination,
+      link_label: info.label,
+      link_url: a.href,
+      source_name: campaign.source,
+      medium_name: campaign.medium,
+      campaign_name: campaign.campaign,
+      platform_name: getPlatform()
+    });
+  }, true);
+
+  loadAnalytics();
+})();
+</script>
+
+
 </body>
 </html>
