@@ -434,8 +434,8 @@
     if (!/^[a-z0-9]+$/i.test(CLARITY_PROJECT_ID)) return;
     (function(c,l,a,r,i,t,y) {
       c[a] = c[a] || function() { (c[a].q = c[a].q || []).push(arguments); };
-      // Clarity opera em modo cookieless, com recursos limitados.
-      c[a]("consentv2", { ad_Storage: "denied", analytics_Storage: "denied" });
+      // Clarity com cookies analíticos; cookies de publicidade continuam desativados.
+      c[a]("consentv2", { ad_Storage: "denied", analytics_Storage: "granted" });
       t = l.createElement(r);
       t.async = true;
       t.src = "https://www.clarity.ms/tag/" + i;
