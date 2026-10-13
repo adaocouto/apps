@@ -394,11 +394,11 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
 
-    // Coleta automática sem cookies analíticos e sem dados publicitários.
-    // Consent Mode denied permite sinais sem cookies, mas limita sessões/usuários.
+    // Google Analytics com cookies analíticos para medição de audiência.
+    // Cookies de publicidade continuam negados. Exige base legal e transparência conforme LGPD.
     window.gtag("consent", "default", {
       ad_storage: "denied",
-      analytics_storage: "denied",
+      analytics_storage: "granted",
       ad_user_data: "denied",
       ad_personalization: "denied"
     });
