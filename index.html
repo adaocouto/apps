@@ -462,9 +462,31 @@
   function trackAppClick(event) {
     var link = event.target.closest("a[href]");
     if (!link || !link.closest(".app-card")) return;
-    // Modificadores (Ctrl/Cmd/Shift, botão central) seguem a escolha do navegador.
-    if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey ||
-        event.altKey || event.shiftKey) return;
+    if (event.defaultPrevented || (event.button !== 0 && event.button !== 1)) return;
+    // Mede novas abas/janelas sem impedir a escolha do navegador.
+    var nativeNavigation = event.button === 1 || event.ctrlKey || event.metaKey ||
+      event.altKey || event.shiftKey || (link.target && link.target !== "_self") ||
+      link.hasAttribute("download");
+    if (!analyticsConfigured() || typeof window.gtag !== "function") return;
+    if (nativeNavigation) {
+      var nativeDetails = classifyLink(link);
+      var nativeCampaign = getCampaignData();
+      try {
+        window.gtag("event", "app_link_click", {
+          send_to: GA_MEASUREMENT_ID,
+          app_name: nativeDetails.app,
+          destination_type: nativeDetails.destination,
+          link_label: nativeDetails.label,
+          link_url: link.href.split(/[?#]/)[0],
+          source_name: nativeCampaign.source,
+          medium_name: nativeCampaign.medium,
+          campaign_name: nativeCampaign.campaign,
+          platform_name: getPlatform(),
+          transport_type: "beacon"
+        });
+      } catch (_) {}
+      return;
+    }
     if (navigationPending) {
       event.preventDefault(); // Evita dois acionamentos por toque duplo.
       return;
@@ -481,6 +503,8 @@
       if (sentOrTimedOut) return;
       sentOrTimedOut = true;
       clearTimeout(timer);
+      // Não deixa a página salva no histórico com os links bloqueados.
+      navigationPending = false;
       window.location.assign(destinationUrl);
     }
     timer = setTimeout(navigateOnce, 1200);
@@ -506,10 +530,15 @@
     }
   }
 
-  document.addEventListener("click", trackAppClick, false);
+  document.addEventListener("click", function (event) {
+    if (event.button === 0) trackAppClick(event);
+  }, false);
+  document.addEventListener("auxclick", function (event) {
+    if (event.button === 1) trackAppClick(event);
+  }, false);
   // Restaura o funcionamento dos links ao voltar com o botão Voltar (bfcache).
-  window.addEventListener("pageshow", function (event) {
-    if (event.persisted) navigationPending = false;
+  window.addEventListener("pageshow", function () {
+    navigationPending = false;
   });
   loadGoogleAnalytics();
   loadClarity();
@@ -519,3 +548,4 @@
 
 </body>
 </html>
+
