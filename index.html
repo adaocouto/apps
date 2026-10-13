@@ -471,7 +471,7 @@
     }
     if (!analyticsConfigured() || typeof window.gtag !== "function") return;
 
-    // Mesma aba: aguarda no máximo 450 ms para enviar o evento antes de sair.
+    // Mantém a mesma aba e dá mais tempo à tag assíncrona para processar o clique.
     event.preventDefault();
     navigationPending = true;
     var destinationUrl = link.href;
@@ -483,11 +483,12 @@
       clearTimeout(timer);
       window.location.assign(destinationUrl);
     }
-    timer = setTimeout(navigateOnce, 450);
+    timer = setTimeout(navigateOnce, 1200);
     var details = classifyLink(link);
     var campaign = getCampaignData();
     try {
       window.gtag("event", "app_link_click", {
+        send_to: GA_MEASUREMENT_ID,
         app_name: details.app,
         destination_type: details.destination,
         link_label: details.label,
@@ -498,7 +499,7 @@
         platform_name: getPlatform(),
         transport_type: "beacon",
         event_callback: navigateOnce,
-        event_timeout: 400
+        event_timeout: 1100
       });
     } catch (_) {
       navigateOnce();
