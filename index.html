@@ -1,13 +1,15 @@
-<!-- AndroidVersionName = "1.012.10.15" -->
-<!doctype html>
+<!-- AndroidVersionName = "1.013.10.27" -->
+<!-- VersionName = "1.013.10.27" -->
+<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#173a6d">
-  <meta name="description" content="Links dos aplicativos de Adão L. L. Couto para Android e iPhone/iOS.">
-  <title>Aplicativos — Adão L. L. Couto</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#173a6d" name="theme-color"/>
+<meta content="Aplicativos de apoio pediátrico e neonatal de Adão L. L. Couto para Android e iPhone/iOS." name="description"/>
+<title>Aplicativos — Adão L. L. Couto</title>
+<style>
     :root{
       --bg:#eef4fb;
       --surface:#fff;
@@ -70,12 +72,19 @@
     .btn:active{transform:scale(.985)}
     .btn.android-primary{background:var(--primary);color:#fff}
     .btn.android-primary:hover{background:var(--primary2)}
-    .btn.android-secondary{border:1px solid #b9cce0;background:var(--soft);color:var(--primary)}
-    .btn.android-secondary:hover{background:#eaf2fb}
     .btn.ios-primary{background:var(--ios);color:#fff}
     .btn.ios-primary:hover{background:#374151}
-    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:.78rem;line-height:1.5}
-    footer strong{color:var(--primary)}
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.92rem;line-height:1.65}
+    .footer-identity{display:grid;gap:2px;margin-bottom:20px}
+    .footer-heading{font-size:1.08rem;color:var(--muted);font-weight:400}
+    .footer-links{display:grid;grid-template-columns:1fr;gap:12px;margin:22px auto 13px;max-width:740px}
+    .footer-links a{display:flex;align-items:center;justify-content:center;min-height:58px;padding:14px 18px;border:1px solid #b9cce0;border-radius:15px;background:var(--surface);color:var(--primary);box-shadow:0 8px 22px rgba(23,58,109,.06);text-align:center;text-decoration:none;font-weight:800;font-size:1rem}
+    .footer-links a:hover{background:#eaf2fb;border-color:var(--primary2)}
+    .app-version{color:var(--muted);font-size:.91rem;margin-top:15px}
+    .language-controls{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .language-controls label{font-size:.86rem;font-weight:700;color:var(--primary)}
+    .language-controls select{min-height:44px;border:1px solid var(--border);border-radius:11px;background:#fff;color:var(--primary);padding:9px 12px;font:inherit;font-size:.86rem;font-weight:700}
+    .language-controls select:focus-visible,.footer-links a:focus-visible{outline:3px solid var(--primary2);outline-offset:3px}
     @media(max-width:720px){
       .page{width:min(100% - 22px,620px);padding-top:28px}
       .grid{grid-template-columns:1fr}
@@ -86,276 +95,271 @@
 
 
   </style>
-
-
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden;pointer-events:none">
-    <defs>
-      <symbol id="platform-android" viewBox="0 0 32 32">
-        <rect width="32" height="32" rx="9" fill="#e6f6ed"/>
-        <g fill="#228b4e">
-          <path d="M8 14a8 8 0 0 1 16 0v1H8z"/>
-          <rect x="8" y="16" width="16" height="8" rx="2"/>
-          <rect x="4.5" y="15" width="2.5" height="9" rx="1.25"/>
-          <rect x="25" y="15" width="2.5" height="9" rx="1.25"/>
-          <rect x="11" y="22" width="3" height="6" rx="1.5"/>
-          <rect x="18" y="22" width="3" height="6" rx="1.5"/>
-        </g>
-        <path d="m12 8-2-3m10 3 2-3" fill="none" stroke="#228b4e" stroke-width="1.6" stroke-linecap="round"/>
-        <g fill="#fff"><circle cx="12" cy="11" r="1"/><circle cx="20" cy="11" r="1"/></g>
-      </symbol>
-      <symbol id="platform-web" viewBox="0 0 32 32">
-        <rect width="32" height="32" rx="9" fill="#e8f1fc"/>
-        <rect x="4" y="6" width="24" height="20" rx="3" fill="#fff" stroke="#2563a8" stroke-width="1.5"/>
-        <path d="M4 11h24" fill="none" stroke="#2563a8" stroke-width="1.5"/>
-        <g fill="#7d9fc4"><circle cx="7.5" cy="8.5" r=".8"/><circle cx="10.5" cy="8.5" r=".8"/><circle cx="13.5" cy="8.5" r=".8"/></g>
-        <g fill="none" stroke="#2563a8" stroke-width="1.2">
-          <circle cx="16" cy="18.5" r="5"/>
-          <ellipse cx="16" cy="18.5" rx="2.1" ry="5"/>
-          <path d="M11 18.5h10"/>
-        </g>
-      </symbol>
-    </defs>
-  </svg>
-  <main class="page">
-    <header class="hero">
-      <div class="hero-badge">Android • iPhone / iOS</div>
-      <h1>Meus Aplicativos</h1>
-      <p>Links organizados por aplicativo e por plataforma. No Android, use o Google Play; no iPhone/iOS, use o acesso correspondente disponível.</p>
-    </header>
-
-    <section class="grid" aria-label="Lista de aplicativos">
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">A</div>
-        <div class="app-info"><h2>Apgar</h2><p>Índice de Apgar</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.apgar">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.apgar">Participar na Web</a>
-            </div>
-          </div>
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/apgar/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">B</div>
-        <div class="app-info"><h2>Idade Gestacional pelo New Ballard</h2><p>Avaliação da idade gestacional neonatal</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.ballard">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.ballard">Participar na Web</a>
-            </div>
-          </div>
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/ballard/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">C</div>
-        <div class="app-info"><h2>CDAB</h2><p>Interpretação da Gasometria e distúrbio ácido-base.</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.cdab">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.cdab">Participar na Web</a>
-            </div>
-          </div>
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/cdab/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">C</div>
-        <div class="app-info"><h2>Clearance</h2><p>Cálculo de Clearance estimado em Pediatria</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.clearance">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.clearance">Participar na Web</a>
-            </div>
-          </div>
-
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/clearance/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">C</div>
-        <div class="app-info"><h2>Conversor Laboratorial</h2><p>Conversões Laboratoriais</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.convlab">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.convlab">Participar na Web</a>
-            </div>
-          </div>
-
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/convlab/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">G</div>
-        <div class="app-info"><h2>Glasgow Pediátrico</h2><p>Escala de Coma de Glasgow em Pediatria</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.glasgow">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.glasgow">Participar na Web</a>
-            </div>
-          </div>
-
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/glasgow/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">H</div>
-        <div class="app-info"><h2>Hidratação Neonatal</h2><p>Hidratação Neonatal</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.hidra">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.hidra">Participar na Web</a>
-            </div>
-          </div>
-
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/hidra/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">H</div>
-        <div class="app-info"><h2>Hidratação Venosa Neonatal</h2><p>Hidratação Venosa Neonatal</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.hvneo">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.hvneo">Participar na Web</a>
-            </div>
-          </div>
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/hvneo/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">H</div>
-        <div class="app-info"><h2>Hidratação Venosa Isotônica</h2><p>Hidratação Venosa Isotônica</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.hviso">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.hviso">Participar na Web</a>
-            </div>
-          </div>
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/hviso/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">P</div>
-        <div class="app-info"><h2>Paraped</h2><p>Disponível para Android e iPhone / iOS</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.paraped">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.paraped">Participar na Web</a>
-            </div>
-          </div>
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/paraped/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">P</div>
-        <div class="app-info"><h2>Plano C do Tratamento da Desidratação</h2><p>Plano C para tratamento da desidratação</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.planoc">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.planoc">Participar na Web</a>
-            </div>
-          </div>
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/planoc/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="app-card">
-        <div class="app-icon" aria-hidden="true">P</div>
-        <div class="app-info"><h2>Preparo de Soluções</h2><p>Preparo e diluição de soluções</p></div>
-        <div class="platforms">
-          <div class="platform-group">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-android"></use></svg>Android</div>
-            <div class="actions">
-              <a class="btn android-primary" href="https://play.google.com/store/apps/details?id=com.adaocouto.preparo">Abrir no Google Play</a>
-              <a class="btn android-secondary" href="https://play.google.com/apps/testing/com.adaocouto.preparo">Participar na Web</a>
-            </div>
-          </div>
-
-          <div class="platform-group ios">
-            <div class="platform-label"><svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#platform-web"></use></svg>iPhone / iOS</div>
-            <div class="actions single"><a class="btn ios-primary" href="https://adaocouto.github.io/preparo/">Abrir versão para iPhone / iOS</a></div>
-          </div>
-        </div>
-      </article>
-
-    </section>
-
-    <footer>
-      <strong>Desenvolvido por Adão L. L. Couto</strong><br>
-      Aplicativos para Android e iPhone / iOS
-    </footer>
-  </main>
-
+<svg aria-hidden="true" focusable="false" height="0" style="position:absolute;overflow:hidden;pointer-events:none" width="0" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<symbol id="platform-android" viewbox="0 0 32 32">
+<rect fill="#e6f6ed" height="32" rx="9" width="32"></rect>
+<g fill="#228b4e">
+<path d="M8 14a8 8 0 0 1 16 0v1H8z"></path>
+<rect height="8" rx="2" width="16" x="8" y="16"></rect>
+<rect height="9" rx="1.25" width="2.5" x="4.5" y="15"></rect>
+<rect height="9" rx="1.25" width="2.5" x="25" y="15"></rect>
+<rect height="6" rx="1.5" width="3" x="11" y="22"></rect>
+<rect height="6" rx="1.5" width="3" x="18" y="22"></rect>
+</g>
+<path d="m12 8-2-3m10 3 2-3" fill="none" stroke="#228b4e" stroke-linecap="round" stroke-width="1.6"></path>
+<g fill="#fff"><circle cx="12" cy="11" r="1"></circle><circle cx="20" cy="11" r="1"></circle></g>
+</symbol>
+<symbol id="platform-web" viewbox="0 0 32 32">
+<rect fill="#e8f1fc" height="32" rx="9" width="32"></rect>
+<rect fill="#fff" height="20" rx="3" stroke="#2563a8" stroke-width="1.5" width="24" x="4" y="6"></rect>
+<path d="M4 11h24" fill="none" stroke="#2563a8" stroke-width="1.5"></path>
+<g fill="#7d9fc4"><circle cx="7.5" cy="8.5" r=".8"></circle><circle cx="10.5" cy="8.5" r=".8"></circle><circle cx="13.5" cy="8.5" r=".8"></circle></g>
+<g fill="none" stroke="#2563a8" stroke-width="1.2">
+<circle cx="16" cy="18.5" r="5"></circle>
+<ellipse cx="16" cy="18.5" rx="2.1" ry="5"></ellipse>
+<path d="M11 18.5h10"></path>
+</g>
+</symbol>
+</defs>
+</svg>
+<main class="page">
+<header class="hero">
+<div class="hero-badge">Android • iPhone / iOS</div>
+<h1 data-i18n="heroTitle">Meus Aplicativos</h1>
+<p data-i18n="heroDescription">Links organizados por aplicativo e por plataforma. No Android, use o Google Play; no iPhone/iOS, use o acesso correspondente disponível.</p>
+<div class="language-controls">
+<label data-i18n="languageLabel" for="appsLanguage">Idioma</label>
+<select aria-label="Idioma / Language" id="appsLanguage">
+<option value="pt-BR">Português</option>
+<option value="en-US">English</option>
+</select>
+</div>
+</header>
+<section aria-label="Lista de aplicativos" class="grid">
+<article class="app-card" data-app-key="paraped">
+<div aria-hidden="true" class="app-icon">P</div>
+<div class="app-info"><h2 data-analytics-name="Paraped" data-i18n="app_paraped">Cálculo de Medicamentos na PCR Pediátrica</h2><p data-i18n="desc_paraped">Doses e preparos utilizados na reanimação pediátrica.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.paraped">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/paraped/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="cdab">
+<div aria-hidden="true" class="app-icon">C</div>
+<div class="app-info"><h2 data-analytics-name="CDAB" data-i18n="app_cdab">Identificação de Distúrbios Ácido Base na Gasometria</h2><p data-i18n="desc_cdab">Análise da gasometria e interpretação dos distúrbios ácido-base.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.cdab">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/cdab/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="hvneo">
+<div aria-hidden="true" class="app-icon">H</div>
+<div class="app-info"><h2 data-analytics-name="Hidratação Venosa Neonatal" data-i18n="app_hvneo">Hidratação Venosa Neonatal</h2><p data-i18n="desc_hvneo">Cálculo de fluidos, eletrólitos e infusão de glicose por etapas.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.hvneo">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/hvneo/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="hviso">
+<div aria-hidden="true" class="app-icon">H</div>
+<div class="app-info"><h2 data-analytics-name="Hidratação Venosa Isotônica" data-i18n="app_hviso">Hidratação Venosa Isotônica</h2><p data-i18n="desc_hviso">Preparo da hidratação isotônica pediátrica por etapas.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.hviso">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/hviso/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="planoc">
+<div aria-hidden="true" class="app-icon">P</div>
+<div class="app-info"><h2 data-analytics-name="Plano C do Tratamento da Desidratação" data-i18n="app_planoc">Plano C para Tratamento da Desidratação</h2><p data-i18n="desc_planoc">Reposição intravenosa na desidratação grave.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.planoc">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/planoc/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="apgar">
+<div aria-hidden="true" class="app-icon">A</div>
+<div class="app-info"><h2 data-analytics-name="Apgar" data-i18n="app_apgar">Escore de APGAR</h2><p data-i18n="desc_apgar">Avaliação clínica do recém-nascido pelo escore de Apgar.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.apgar">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/apgar/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="ballard">
+<div aria-hidden="true" class="app-icon">B</div>
+<div class="app-info"><h2 data-analytics-name="Idade Gestacional pelo New Ballard" data-i18n="app_ballard">Avaliação da Idade Gestacional pelo New Ballard</h2><p data-i18n="desc_ballard">Estimativa da idade gestacional do recém-nascido.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.ballard">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/ballard/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="glasgow">
+<div aria-hidden="true" class="app-icon">G</div>
+<div class="app-info"><h2 data-analytics-name="Glasgow Pediátrico" data-i18n="app_glasgow">Escala de Coma de Glasgow Pediátrica</h2><p data-i18n="desc_glasgow">Avaliação do nível de consciência em pediatria.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.glasgow">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/glasgow/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="preparo">
+<div aria-hidden="true" class="app-icon">P</div>
+<div class="app-info"><h2 data-analytics-name="Preparo de Soluções" data-i18n="app_preparo">Preparo de Soluções com Concentrações Não Padronizadas</h2><p data-i18n="desc_preparo">Cálculo de volumes para mistura de soluções.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.preparo">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/preparo/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="clearance">
+<div aria-hidden="true" class="app-icon">C</div>
+<div class="app-info"><h2 data-analytics-name="Clearance" data-i18n="app_clearance">Estimativa da Taxa de Filtração Glomerular</h2><p data-i18n="desc_clearance">Cálculo de função renal em pediatria.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.clearance">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/clearance/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="convlab">
+<div aria-hidden="true" class="app-icon">C</div>
+<div class="app-info"><h2 data-analytics-name="Conversor Laboratorial" data-i18n="app_convlab">Conversões de Unidades Laboratoriais</h2><p data-i18n="desc_convlab">Conversões entre unidades de exames laboratoriais.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.convlab">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/convlab/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article><article class="app-card" data-app-key="hidra">
+<div aria-hidden="true" class="app-icon">H</div>
+<div class="app-info"><h2 data-analytics-name="Hidratação Neonatal" data-i18n="app_hidra">Cálculo de Hidratação Neonatal</h2><p data-i18n="desc_hidra">Hidratação e necessidades hídricas do recém-nascido.</p></div>
+<div class="platforms">
+<div class="platform-group">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-android"></use></svg>Android</div>
+<div class="actions single">
+<a class="btn android-primary" data-i18n="openPlay" href="https://play.google.com/store/apps/details?id=com.adaocouto.hidra">Abrir no Google Play</a>
+</div>
+</div>
+<div class="platform-group ios">
+<div class="platform-label"><svg aria-hidden="true" class="platform-icon" focusable="false" viewbox="0 0 32 32"><use href="#platform-web"></use></svg>iPhone / iOS</div>
+<div class="actions single"><a class="btn ios-primary" data-i18n="openIos" href="https://adaocouto.github.io/hidra/">Abrir versão para iPhone / iOS</a></div>
+</div>
+</div>
+</article></section>
+<footer>
+<div class="footer-identity">
+<div class="footer-heading" data-i18n="footerHeading">Meus aplicativos</div>
+<div data-i18n="footerPublisher">Aplicativos publicados por Adão Luiz Lopes Couto</div>
+<div data-i18n="footerUpdated">Última atualização: 27 de outubro de 2026</div>
+</div>
+<nav aria-label="Links úteis" class="footer-links">
+<a data-i18n="privacy" href="https://adaocouto.github.io/pp/">Política de privacidade</a>
+<a data-i18n="about" href="https://adaocouto.github.io/eu/">Sobre mim</a>
+</nav>
+<div class="app-version">1.013.10.27</div>
+</footer>
+</main>
+<script id="apps-i18n">
+(function () {
+  "use strict";
+  var translations = {"pt-BR":{"heroTitle":"Meus Aplicativos","heroDescription":"Links organizados por aplicativo e por plataforma. No Android, use o Google Play; no iPhone/iOS, use o acesso correspondente disponível.","languageLabel":"Idioma","openPlay":"Abrir no Google Play","openIos":"Abrir versão para iPhone / iOS","developer":"Desenvolvido por Adão L. L. Couto","footerPlatforms":"Aplicativos para Android e iPhone / iOS","privacy":"Política de privacidade","about":"Sobre mim","version":"Versão","app_apgar":"Escore de APGAR","desc_apgar":"Avaliação clínica do recém-nascido pelo escore de Apgar.","app_ballard":"Avaliação da Idade Gestacional pelo New Ballard","desc_ballard":"Estimativa da idade gestacional do recém-nascido.","app_cdab":"Identificação de Distúrbios Ácido Base na Gasometria","desc_cdab":"Análise da gasometria e interpretação dos distúrbios ácido-base.","app_clearance":"Estimativa da Taxa de Filtração Glomerular","desc_clearance":"Cálculo de função renal em pediatria.","app_convlab":"Conversões de Unidades Laboratoriais","desc_convlab":"Conversões entre unidades de exames laboratoriais.","app_glasgow":"Escala de Coma de Glasgow Pediátrica","desc_glasgow":"Avaliação do nível de consciência em pediatria.","app_hidra":"Cálculo de Hidratação Neonatal","desc_hidra":"Hidratação e necessidades hídricas do recém-nascido.","app_hvneo":"Hidratação Venosa Neonatal","desc_hvneo":"Cálculo de fluidos, eletrólitos e infusão de glicose por etapas.","app_hviso":"Hidratação Venosa Isotônica","desc_hviso":"Preparo da hidratação isotônica pediátrica por etapas.","app_paraped":"Cálculo de Medicamentos na PCR Pediátrica","desc_paraped":"Doses e preparos utilizados na reanimação pediátrica.","app_planoc":"Plano C para Tratamento da Desidratação","desc_planoc":"Reposição intravenosa na desidratação grave.","app_preparo":"Preparo de Soluções com Concentrações Não Padronizadas","desc_preparo":"Cálculo de volumes para mistura de soluções.","footerHeading":"Meus aplicativos","footerPublisher":"Aplicativos publicados por Adão Luiz Lopes Couto","footerUpdated":"Última atualização: 27 de outubro de 2026"},"en-US":{"heroTitle":"My Apps","heroDescription":"App links organized by platform. On Android, open the app in Google Play; on iPhone/iOS, use the corresponding available web version.","languageLabel":"Language","openPlay":"Open in Google Play","openIos":"Open iPhone / iOS version","developer":"Developed by Adão L. L. Couto","footerPlatforms":"Apps for Android and iPhone / iOS","privacy":"Privacy Policy","about":"About me","version":"Version","app_apgar":"APGAR Score","desc_apgar":"Clinical assessment of the newborn using the Apgar score.","app_ballard":"Gestational Age Assessment Using New Ballard","desc_ballard":"Newborn gestational age estimation.","app_cdab":"Identification of Acid–Base Disorders in Blood Gas Analysis","desc_cdab":"Blood gas interpretation and assessment of acid–base disorders.","app_clearance":"Estimated Glomerular Filtration Rate","desc_clearance":"Assessment of kidney function in pediatric patients.","app_convlab":"Laboratory Unit Conversions","desc_convlab":"Conversion between laboratory measurement units.","app_glasgow":"Pediatric Glasgow Coma Scale","desc_glasgow":"Assessment of consciousness in pediatric patients.","app_hidra":"Neonatal Fluid Therapy Calculations","desc_hidra":"Fluid requirements and hydration for newborns.","app_hvneo":"Neonatal Intravenous Fluid Therapy","desc_hvneo":"Stepwise fluid, electrolyte and glucose infusion calculations.","app_hviso":"Pediatric Isotonic Intravenous Fluid Therapy","desc_hviso":"Stepwise preparation of pediatric isotonic fluid therapy.","app_paraped":"Pediatric Cardiac Arrest Medication Calculations","desc_paraped":"Medication doses and preparations for pediatric resuscitation.","app_planoc":"Plan C for Dehydration Treatment","desc_planoc":"Intravenous rehydration for severe dehydration.","app_preparo":"Preparation of Nonstandard-Concentration Solutions","desc_preparo":"Calculation of solution-mixing volumes.","footerHeading":"My apps","footerPublisher":"Applications published by Adão Luiz Lopes Couto","footerUpdated":"Last updated: October 27, 2026"}};
+  var selector = document.getElementById("appsLanguage");
+  var STORAGE_KEY = "adaocouto-apps-language-v1";
+  function applyLanguage(language) {
+    var lang = translations[language] ? language : "pt-BR";
+    var words = translations[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(function (element) {
+      var translated = words[element.getAttribute("data-i18n")];
+      if (typeof translated === "string") element.textContent = translated;
+    });
+    document.title = lang === "en-US" ? "Apps — Adão L. L. Couto" : "Aplicativos — Adão L. L. Couto";
+    document.querySelector('meta[name="description"]').setAttribute("content", lang === "en-US" ? "Links to Adão L. L. Couto's Android and iPhone/iOS apps." : "Aplicativos de apoio pediátrico e neonatal de Adão L. L. Couto para Android e iPhone/iOS.");
+    document.querySelector("section.grid").setAttribute("aria-label", lang === "en-US" ? "List of apps" : "Lista de aplicativos");
+    document.querySelector("footer nav").setAttribute("aria-label", lang === "en-US" ? "Useful links" : "Links úteis");
+    selector.value = lang;
+    try { window.localStorage.setItem(STORAGE_KEY, lang); } catch (_) { /* optional */ }
+  }
+  var saved = "pt-BR";
+  try { saved = window.localStorage.getItem(STORAGE_KEY) || saved; } catch (_) { /* storage may be blocked */ }
+  applyLanguage(saved);
+  selector.addEventListener("change", function () { applyLanguage(selector.value); });
+})();
+</script>
 <script>
 (function () {
   "use strict";
@@ -476,12 +480,11 @@
     var href = link.href || "";
     var destination = "Outro";
     if (/play\.google\.com\/store\/apps\/details/i.test(href)) destination = "Google Play";
-    else if (/play\.google\.com\/apps\/testing/i.test(href)) destination = "Teste Google Play";
     else if (/adaocouto\.github\.io/i.test(href)) destination = "iPhone / iOS";
     var card = link.closest(".app-card");
     var title = card && card.querySelector("h2");
     return {
-      app: title ? title.textContent.trim() : "",
+      app: title ? (title.getAttribute("data-analytics-name") || title.textContent.trim()) : "",
       destination: destination,
       label: (link.textContent || "").trim()
     };
@@ -572,10 +575,6 @@
   loadClarity();
 })();
 </script>
-
-
-<script async src="https://painel-aplicativos-omega.vercel.app/tracker.js"></script>
+<script async="" src="https://painel-aplicativos-omega.vercel.app/tracker.js"></script>
 </body>
 </html>
-
-
